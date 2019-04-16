@@ -33,6 +33,7 @@ use Rack::Flash
 
   patch '/songs/:slug' do
       @song = Song.find_by_slug(params[:slug])
+      @song.artist = Artist.find_or_create_by(name: params["Artist Name"])
       @song.artist.update(name: params["Artist Name"])
       @song.genre.update(params[:genres])
       @song.save
