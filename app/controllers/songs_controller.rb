@@ -37,7 +37,7 @@ use Rack::Flash
       @song.genre.update(params[:genres])
       @song.save
       flash[:message] = "Successfully updated song."
-      erb :'/songs/show'
+      redirect to("/songs/#{@song.slug}")
   end
 
 
