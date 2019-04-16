@@ -36,6 +36,7 @@ use Rack::Flash
       @song.artist.update(name: params["Artist Name"])
       @song.genre.update(params[:genres])
       @song.save
+      flash[:message] = "Successfully updated song."
       erb :'/songs/show'
   end
 
