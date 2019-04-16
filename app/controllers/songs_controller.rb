@@ -31,7 +31,10 @@ use Rack::Flash
     erb :'/songs/edit'
   end
 
-  patch
+  patch '/songs/:slug' do
+      @song = Song.find_by_slug(params[:slug])
+      @song.artist.update(name: params["Artist Name"])
+  end
 
 
 end
