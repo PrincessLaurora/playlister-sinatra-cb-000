@@ -1,0 +1,10 @@
+<h1>Update Song</h1>
+
+<form action="/songs/<%=@song.slug%>" method="POST">
+  <label>Name:</label>
+
+  <br></br>
+
+  <input type="text" name="pet[name]" id="pet_name" value="<%=@pet.name%>">
+
+  <br></br>
