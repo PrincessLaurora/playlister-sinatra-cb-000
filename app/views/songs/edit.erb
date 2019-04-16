@@ -3,12 +3,12 @@
 <form action="/songs/<%= @song.slug %>" method="POST">
   <input type="hidden" name="_method" value="PATCH">
 
-<label for="name">Name</label>
+<label>Name</label>
  <input type="text" name="song[name]" id="name" value="<%= @song.name %>"><br>
 
   <label>Artist Name:</label>
 
-  <input type="text" name="artist[name]" value= "<%=@song.artist.name%>"  id="artist_name"><br><br>
+<input type="text" name="artist[name]" value="<%= @song.artist.name %>" id="artist_name"><br><br>
 
   <label>Genre Name:</label>
   <% Genre.all.each do |genre| %>
